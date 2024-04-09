@@ -7,8 +7,8 @@ import { ethers } from "ethers";
 import Web3Modal from "web3modal";
 
 //INTERNAL IMPORTS
-import factoryAbi from "../factoryAbi.json";
-import ERC20ABI from "..ERC20abi.json";
+import factoryAbi from ".//factoryAbi.json";
+import ERC20ABI from ".//Abi.json";
 
 import Woox from "../context/Woox.json";
 import ICOWoox from "../context/ICOWoox.json";

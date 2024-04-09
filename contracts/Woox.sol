@@ -102,14 +102,14 @@ contract Woox {
         uint256,
         bool)
         { 
-            return (
+            return(
                 tokenHolderInfos[_address]._tokenId,
                 tokenHolderInfos[_address]._from,
                 tokenHolderInfos[_address]._to,
                 tokenHolderInfos[_address]._totalToken,
                 tokenHolderInfos[_address]._tokenHolder,
-                );
-        }
+            )
+        };
 
     function getTokenHolder() public view returns (
         address[] 

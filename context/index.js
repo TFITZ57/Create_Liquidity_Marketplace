@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { ethers, Contract } from 'ethers';
 import Web3Modal from 'web3modal';
 import axios from 'axios';
-import UniswapV3Pool from '@uniswap/v3-core/artifacts/contracts/UniswapV3Pool.sol/UniswapV3Pool.json';
 import toast from 'react-hot-toast';
 
 import { Token } from '@uniswap/sdk-core';
 import { Pool, Position, nearestUsableTick } from '@uniswap/v3-sdk';
-import { abi as IUniswapV3PoolABI } from '@uniswap/v3-core/artifacts/contracts/interfaces/IUniswapV3Pool.sol/IUniswapV3Pool.json';
-import { abi as INonfungiblePositionManagerABI } from '@uniswap/v3-periphery/artifacts/contracts/INonfungiblePositionManager.sol/INonfungiblePositionManager.json';
-import ERC20_ABI from '../contect/Abi.json';
+import { abi as IUniswapV3Pool_ABI } from '@uniswap/v3-core/artifacts/contracts/interfaces/IUniswapV3Pool.sol/IUniswapV3Pool.json';
+import { abi as INonfungiblePositionManager_ABI } from '@uniswap/v3-core/artifacts/contracts/interfaces/IUniswapV3Pool.sol/IUniswapV3Pool.json';
+import IUniswapV3Pool from '@uniswap/v3-core/artifacts/contracts/interfaces/IUniswapV3Pool.sol/IUniswapV3Pool.json';
+import ERC20ABI from './/Abi.json';
 
 
 //INTERNAL IMPORTS
@@ -396,7 +396,7 @@ export const CONTEXTProvider = ({ children }) => {
             const contract = await internalWooxContract();
             console.log(contract);
     
-            const price = 0.0001 * tokenAmount; // Assuming tokenAmount is the amount of tokens to buy
+            const price = 0.0001 * tokenPrice // Assuming tokenAmount is the amount of tokens to buy
             const totalAmount = ethers.utils.parseUnits(price.toString(), "ether");
     
             const buying = await contract.connect(signer).buyTokens(tokenAmount, {

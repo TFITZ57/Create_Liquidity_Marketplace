@@ -1,4 +1,4 @@
-import React { useState, useContext } from "react";
+import React, { useState, useContext } from "react";
 
 //INTERNAL IMPORT
 import {
@@ -55,8 +55,11 @@ const index = () => {
         connect={connect}
         aaddrss={address}
       />
-       <div 
+       <div className="main-content-wrapper">
+        <Hero transferNativeToken={transferNativeToken} />
+        <ICOTokens />
+        <LiquidityHistory GET_ALL_LIQUIDITY={GET_ALL_LIQUIDITY} />
+      </div>
     </div>
-  );}
-
-export default index;
+  );
+};
